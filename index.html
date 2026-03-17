@@ -269,33 +269,47 @@
     /* ─── WHO IS IT FOR / WHY DOES IT EXIST ─── */
     .who-section {
       background: var(--black);
-      padding: 80px 0;
+      padding: 0;
     }
     .who-grid {
       display: grid;
-      grid-template-columns: auto 1fr auto 1fr;
-      gap: 32px 40px;
-      align-items: start;
+      grid-template-columns: 1fr 1fr;
+      max-width: 900px;
+      margin: 0 auto;
     }
-    .who-portrait {
+    .who-cell {
+      aspect-ratio: 1/1;
+      overflow: hidden;
+    }
+    .who-cell img {
       width: 100%;
-      max-width: 260px;
-      border-radius: 4px;
+      height: 100%;
       object-fit: cover;
-      aspect-ratio: 9/10;
+      filter: grayscale(100%);
+      display: block;
     }
-    .who-text h2 {
-      font-size: 36px;
+    .who-cell-text {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 40px;
+    }
+    .who-cell-text h2 {
+      font-size: 32px;
+      font-style: italic;
       margin-bottom: 20px;
     }
-    .who-text p {
-      font-size: 16px;
-      line-height: 1.8;
+    .who-cell-text p {
+      font-size: 15px;
+      line-height: 1.7;
       color: var(--text-light);
+      max-width: 320px;
     }
     .who-cta {
       text-align: center;
-      margin-top: 48px;
+      padding: 48px 0;
     }
 
     /* ─── TESTIMONIAL 1 (off-white) ─── */
@@ -538,8 +552,9 @@
       .hero h1 { font-size: 36px; }
       .hero-desc { font-size: 16px; }
       .three-cols { grid-template-columns: 1fr; gap: 24px; }
-      .who-grid { grid-template-columns: 1fr; gap: 24px; }
-      .who-portrait { max-width: 100%; }
+      .who-grid { grid-template-columns: 1fr; }
+      .who-cell { aspect-ratio: auto; }
+      .who-cell-text { padding: 40px 24px; }
       .bio-content { flex-direction: column; align-items: center; text-align: center; }
       h2 { font-size: 32px !important; }
       .cta-btn { font-size: 14px; padding: 14px 28px; }
@@ -648,15 +663,19 @@
   <section class="who-section">
     <div class="container">
       <div class="who-grid">
-        <img src="images/portrait1.jpg" alt="Jonathan Yuval" class="who-portrait">
-        <div class="who-text">
+        <div class="who-cell">
+          <img src="images/portrait1.jpg" alt="Jonathan Yuval">
+        </div>
+        <div class="who-cell who-cell-text">
           <h2>Who Is It For</h2>
           <p>My program is created exclusively for entrepreneurs, and young companies owners who are taking their first steps in executing their sales strategy. This is one of the most important and dangerous tipping point in a young company life, diligently executing the right steps is crucial for the company survival and growth.</p>
         </div>
-        <img src="images/portrait2.jpg" alt="Jonathan Yuval" class="who-portrait">
-        <div class="who-text">
+        <div class="who-cell who-cell-text">
           <h2>Why Does It Exist</h2>
           <p>Because many entrepreneurs come from technology side. And in order to make the company successful, they need to unlock the sales and business potential in the right way.</p>
+        </div>
+        <div class="who-cell">
+          <img src="images/portrait2.jpg" alt="Jonathan Yuval">
         </div>
       </div>
       <div class="who-cta">
