@@ -147,51 +147,83 @@
 
     /* ─── VISION / JOIN THE WINNING SIDE ─── */
     .vision {
-      background: var(--white);
-      color: var(--black);
+      position: relative;
+      background: var(--navy-dark);
+      color: var(--white);
       padding: 80px 0;
+      overflow: hidden;
     }
+    .vision-bg {
+      position: absolute;
+      inset: 0;
+      background: url('images/business-meeting.jpg') center/cover no-repeat;
+      opacity: 0.15;
+    }
+    .vision .container { position: relative; z-index: 2; }
     .vision-header {
       font-family: var(--display-font);
       font-size: 22px;
       font-weight: 400;
       text-align: center;
-      color: var(--text-gray);
+      color: var(--orange);
       margin-bottom: 8px;
     }
     .vision h2 {
-      font-size: 48px;
+      font-family: var(--display-font);
+      font-size: 56px;
+      font-style: italic;
+      font-weight: 700;
       text-align: center;
       margin-bottom: 48px;
-      color: var(--navy);
+      color: var(--orange);
     }
     .vision-list {
       list-style: none;
-      max-width: 700px;
+      max-width: 900px;
       margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px 60px;
     }
     .vision-list li {
       display: flex;
-      align-items: flex-start;
+      align-items: center;
       gap: 14px;
       padding: 12px 0;
-      font-size: 16px;
-      color: #333;
-      border-bottom: 1px solid #eee;
+      font-size: 18px;
+      color: var(--white);
+      border-bottom: none;
     }
-    .vision-list li:last-child { border-bottom: none; }
     .vision-list .check {
       color: var(--orange);
-      font-size: 20px;
+      font-size: 22px;
       flex-shrink: 0;
-      margin-top: 2px;
+      background: var(--orange);
+      color: var(--white);
+      width: 28px;
+      height: 28px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 4px;
+      font-size: 16px;
     }
     .vision-list li.more-item {
       font-style: italic;
-      color: var(--text-gray);
-      justify-content: center;
+      color: var(--white);
       border-bottom: none;
-      padding-top: 20px;
+    }
+    .vision-cta {
+      text-align: center;
+      margin-top: 48px;
+    }
+    .vision-cta .cta-btn {
+      font-size: 18px;
+      padding: 16px 40px;
+    }
+    @media (max-width: 600px) {
+      .vision-list { grid-template-columns: 1fr; gap: 4px; }
+      .vision h2 { font-size: 36px; }
     }
 
     /* ─── HOW IT WORKS ─── */
@@ -548,16 +580,20 @@
     </div>
   </section>
 
-  <!-- JONATHAN'S VISION / JOIN THE WINNING SIDE -->
-  <section class="vision">
-    <div class="container">
-      <p class="vision-header">Jonathan's Vision</p>
+  <!-- JONATHAN'S VISION VIDEO -->
+  <section style="background:var(--off-white);padding:60px 0;">
+    <div class="container" style="text-align:center;">
+      <p style="font-family:var(--display-font);font-size:22px;color:var(--text-gray);margin-bottom:8px;">Jonathan's Vision</p>
       <video controls playsinline style="width:100%;max-width:800px;margin:20px auto;display:block;border-radius:12px;">
         <source src="images/jonathans-vision.mp4" type="video/mp4">
       </video>
-      <div style="text-align:center;margin:20px 0 40px;">
-        <a href="#" class="cta-btn" onclick="openModal(); return false;">Book Your FREE Consultation Now</a>
-      </div>
+    </div>
+  </section>
+
+  <!-- JOIN THE WINNING SIDE -->
+  <section class="vision">
+    <div class="vision-bg"></div>
+    <div class="container">
       <h2>Join The Winning Side</h2>
       <ul class="vision-list">
         <li><span class="check">&#10003;</span> Identify right target market</li>
@@ -571,8 +607,11 @@
         <li><span class="check">&#10003;</span> Generate leads</li>
         <li><span class="check">&#10003;</span> Adapt to market changes</li>
         <li><span class="check">&#10003;</span> Build customer relationship</li>
-        <li class="more-item">And many more.</li>
+        <li class="more-item"><span class="check">&#10003;</span> And many more.</li>
       </ul>
+      <div class="vision-cta">
+        <a href="#" class="cta-btn" onclick="openModal(); return false;">Book Your FREE Consultation Now</a>
+      </div>
     </div>
   </section>
 
