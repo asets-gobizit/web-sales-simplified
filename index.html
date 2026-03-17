@@ -190,7 +190,8 @@
       align-items: center;
       gap: 14px;
       padding: 12px 0;
-      font-size: 18px;
+      font-size: 21px;
+      font-family: Arial, Helvetica, sans-serif;
       color: var(--white);
       border-bottom: none;
     }
@@ -581,12 +582,17 @@
   </section>
 
   <!-- JONATHAN'S VISION VIDEO -->
-  <section style="background:var(--off-white);padding:60px 0;">
+  <section style="background:var(--white);padding:60px 0;">
     <div class="container" style="text-align:center;">
-      <p style="font-family:var(--display-font);font-size:22px;color:var(--text-gray);margin-bottom:8px;">Jonathan's Vision</p>
-      <video controls playsinline style="width:100%;max-width:800px;margin:20px auto;display:block;border-radius:12px;">
-        <source src="images/jonathans-vision.mp4" type="video/mp4">
-      </video>
+      <h2 style="font-family:var(--heading-font);font-size:52px;margin-bottom:24px;"><span style="color:var(--navy);">Jonathan's </span><span style="color:var(--orange);font-family:var(--display-font);font-style:italic;">Vision</span></h2>
+      <div style="width:100%;max-width:750px;margin:0 auto;aspect-ratio:16/9;background:#000;border-radius:8px;overflow:hidden;display:flex;align-items:center;justify-content:center;">
+        <video controls playsinline style="height:100%;max-width:100%;">
+          <source src="images/jonathans-vision.mp4" type="video/mp4">
+        </video>
+      </div>
+      <div style="margin-top:28px;">
+        <a href="#" class="cta-btn" onclick="openModal(); return false;">Book Your FREE Consultation Now</a>
+      </div>
     </div>
   </section>
 
